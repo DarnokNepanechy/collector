@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-steam_playtime_20260318
+      author: onepunchenko
+      changes:
+        - createTable:
+            tableName: steam_playtime
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: app_id
+                  type: bigint
+                  autoIncrement: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: field_created
+                  type: timestamp with time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: game_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: playtime_2weeks
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: playtime_forever
+                  type: int
+                  constraints:
+                    nullable: false
