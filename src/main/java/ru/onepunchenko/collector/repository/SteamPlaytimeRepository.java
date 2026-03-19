@@ -8,6 +8,6 @@ import java.time.Instant;
 import java.util.List;
 
 public interface SteamPlaytimeRepository extends ListCrudRepository<SteamPlaytime, Integer> {
-    @Query("select * from steam_playtime sp where sp.field_created >= :from and sp.field_created <= :to")
+    @Query("select * from steam_playtime sp where sp.field_created > :from and sp.field_created <= :to")
     List<SteamPlaytime> getFromPeriod(Instant from, Instant to);
 }
